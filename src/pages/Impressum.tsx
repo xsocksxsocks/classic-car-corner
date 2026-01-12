@@ -50,16 +50,8 @@ const Impressum = () => {
               <h2 className="font-display text-2xl text-foreground mb-4">Registereintrag</h2>
               <p>
                 Eintragung im Handelsregister.<br />
-                Registergericht: Amtsgericht Mannheim<br />
-                (Registernummer auf Anfrage)
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-display text-2xl text-foreground mb-4">Umsatzsteuer-ID</h2>
-              <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                (Auf Anfrage)
+                Registergericht: Amtsgericht Ulm<br />
+                Registernummer: HRB 729908
               </p>
             </section>
 
