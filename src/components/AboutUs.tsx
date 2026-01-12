@@ -1,73 +1,56 @@
-import { Shield, Users, ThumbsUp, Clock } from "lucide-react";
-
-const features = [
-  {
-    icon: Shield,
-    title: "TRUSTED QUALITY",
-    description: "Every vehicle thoroughly inspected before sale",
-  },
-  {
-    icon: Users,
-    title: "FAMILY OWNED",
-    description: "Personal service from real car enthusiasts",
-  },
-  {
-    icon: ThumbsUp,
-    title: "FAIR DEALS",
-    description: "No hidden fees, transparent pricing always",
-  },
-  {
-    icon: Clock,
-    title: "30+ YEARS",
-    description: "Serving the community since 1995",
-  },
-];
-
 const AboutUs = () => {
   return (
-    <section id="about" className="py-20 bg-cream-dark">
-      <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="font-display text-gold text-lg tracking-[0.3em] mb-2">WHO WE ARE</p>
-          <h2 className="font-display text-foreground text-4xl md:text-6xl">
-            ABOUT <span className="text-gold">FABRICARZENTRUM</span>
-          </h2>
+    <section id="about" className="py-24 md:py-32 bg-warm-white">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left column - headline */}
+          <div>
+            <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
+              About Us
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
+              More Than Just a{" "}
+              <span className="italic">Car Dealer</span>
+            </h2>
+            <div className="w-20 h-1 bg-terracotta" />
+          </div>
+
+          {/* Right column - text */}
+          <div className="space-y-6 text-foreground/70 text-lg leading-relaxed">
+            <p>
+              For over 30 years, FabriCarZentrum has been a cornerstone of the Achern 
+              automotive community. What started as a small family business has grown 
+              into a trusted destination for quality pre-owned vehicles.
+            </p>
+            <p>
+              We believe buying a car should be straightforward. That's why we focus 
+              on transparency, fair pricing, and building lasting relationships with 
+              our customers. Every vehicle we sell is thoroughly inspected and comes 
+              with complete documentation.
+            </p>
+            <p className="text-foreground font-medium">
+              Come visit us—we'd love to help you find your next car.
+            </p>
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="bg-navy p-8 retro-shadow-gold">
-              <p className="text-primary-foreground text-lg leading-relaxed mb-6">
-                At FabriCarZentrum, we believe buying a car should be simple, honest, and even enjoyable. 
-                For over 30 years, we've been helping families and individuals find their perfect vehicle 
-                without the pressure tactics you'll find elsewhere.
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-border">
+          {[
+            { number: "30+", label: "Years Experience" },
+            { number: "2000+", label: "Cars Sold" },
+            { number: "100%", label: "Transparency" },
+            { number: "1", label: "Happy Community" },
+          ].map((stat, index) => (
+            <div key={index} className="text-center">
+              <p className="font-display text-4xl md:text-5xl text-terracotta mb-2">
+                {stat.number}
               </p>
-              <p className="text-primary-foreground/80 leading-relaxed mb-6">
-                We specialize in quality pre-owned vehicles at fair prices. Every car on our lot has been 
-                carefully inspected and comes with complete documentation. We're not just selling cars — 
-                we're building relationships that last.
-              </p>
-              <p className="text-gold font-display text-xl tracking-wider">
-                "A HANDSHAKE STILL MEANS SOMETHING HERE"
+              <p className="text-foreground/60 text-sm uppercase tracking-wide">
+                {stat.label}
               </p>
             </div>
-          </div>
-
-          {/* Features grid */}
-          <div className="grid grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-card p-6 border-2 border-navy hover:border-gold transition-colors group"
-              >
-                <feature.icon className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-display text-foreground text-xl mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
