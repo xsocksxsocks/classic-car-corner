@@ -1,22 +1,37 @@
 import { MapPin, Clock, Navigation } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Location = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section id="location" className="py-24 md:py-32 bg-warm-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
-            Besuchen Sie Uns
+            Hier finden Sie uns
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl">
-            Unser <span className="italic">Standort</span>
+            Kommen Sie <span className="italic">vorbei</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Map */}
-          <div className="lg:col-span-3 h-[400px] lg:h-[500px] bg-muted overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-3 h-[400px] lg:h-[500px] bg-muted overflow-hidden"
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2643.5!2d8.0744!3d48.6278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4793e0c6a3c3c3c3%3A0x0!2sVogelsang%204%2C%2077855%20Achern%2C%20Germany!5e0!3m2!1sde!2sde!4v1234567890"
               width="100%"
@@ -28,10 +43,15 @@ const Location = () => {
               title="FabriCarZentrum Standort"
               className="grayscale hover:grayscale-0 transition-all duration-500"
             />
-          </div>
+          </motion.div>
 
           {/* Info */}
-          <div className="lg:col-span-2 flex flex-col justify-center space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-2 flex flex-col justify-center space-y-8"
+          >
             {/* Address */}
             <div className="flex gap-4">
               <MapPin className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
@@ -41,7 +61,7 @@ const Location = () => {
                   FabriCarZentrum UG<br />
                   c/o Schulze & Braun GmbH<br />
                   Vogelsang 4<br />
-                  77855 Achern, Deutschland
+                  77855 Achern
                 </p>
               </div>
             </div>
@@ -72,9 +92,9 @@ const Location = () => {
               className="inline-flex items-center gap-2 bg-charcoal hover:bg-charcoal-light text-white font-medium px-6 py-3 transition-colors text-sm tracking-wide uppercase w-fit"
             >
               <Navigation size={16} />
-              Route Planen
+              Route planen
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

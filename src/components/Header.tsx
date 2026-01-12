@@ -1,33 +1,42 @@
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
+    if (!isHomePage) {
+      window.location.href = `/#${id}`;
+      return;
+    }
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const navItems = [
+    { id: "home", label: "Start" },
+    { id: "about", label: "Über uns" },
+    { id: "services", label: "Leistungen" },
+    { id: "location", label: "Anfahrt" },
+    { id: "contact", label: "Kontakt" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <div className="font-display text-2xl md:text-3xl tracking-tight">
+          <Link to="/" className="font-display text-2xl md:text-3xl tracking-tight">
             Fabri<span className="text-terracotta">Car</span>Zentrum
-          </div>
+          </Link>
 
           {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-8 font-body text-sm tracking-wide">
-            {[
-              { id: "home", label: "Start" },
-              { id: "about", label: "Über Uns" },
-              { id: "services", label: "Leistungen" },
-              { id: "location", label: "Standort" },
-              { id: "contact", label: "Kontakt" },
-            ].map((item) => (
+            {navItems.map((item) => (
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
@@ -61,13 +70,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-6 px-6">
             <ul className="flex flex-col gap-4 font-body text-sm">
-              {[
-                { id: "home", label: "Start" },
-                { id: "about", label: "Über Uns" },
-                { id: "services", label: "Leistungen" },
-                { id: "location", label: "Standort" },
-                { id: "contact", label: "Kontakt" },
-              ].map((item) => (
+              {navItems.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
