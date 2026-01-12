@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
-import FeaturedCars from "@/components/FeaturedCars";
+import Services from "@/components/Services";
 import Location from "@/components/Location";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,7 +13,7 @@ const Index = () => {
       <main>
         <Hero />
         <AboutUs />
-        <FeaturedCars />
+        <Services />
         <Location />
         <Contact />
       </main>

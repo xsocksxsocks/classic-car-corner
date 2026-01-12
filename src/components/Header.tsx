@@ -1,82 +1,80 @@
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (id: string) => {
+    setIsMenuOpen(false);
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <header className="bg-navy text-primary-foreground">
-      {/* Top bar */}
-      <div className="border-b border-navy-light">
-        <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <a href="tel:+4915784227058" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Phone size={14} />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-6 py-4">
+        <nav className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="font-display text-2xl md:text-3xl tracking-tight">
+            Fabri<span className="text-terracotta">Car</span>Zentrum
+          </div>
+
+          {/* Desktop nav */}
+          <ul className="hidden md:flex items-center gap-8 font-body text-sm tracking-wide">
+            {["home", "about", "services", "location", "contact"].map((item) => (
+              <li key={item}>
+                <button
+                  onClick={() => scrollToSection(item)}
+                  className="hover-line text-foreground/70 hover:text-foreground transition-colors uppercase"
+                >
+                  {item}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          {/* Phone CTA */}
+          <a
+            href="tel:+4915784227058"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-terracotta hover:text-terracotta-dark transition-colors"
+          >
+            <Phone size={16} />
+            <span>+49 157 84227058</span>
+          </a>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-6 px-6">
+            <ul className="flex flex-col gap-4 font-body text-sm">
+              {["home", "about", "services", "location", "contact"].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollToSection(item)}
+                    className="text-foreground/70 hover:text-foreground transition-colors uppercase w-full text-left py-2"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="tel:+4915784227058"
+              className="flex items-center gap-2 mt-6 pt-4 border-t border-border text-sm font-medium text-terracotta"
+            >
+              <Phone size={16} />
               <span>+49 157 84227058</span>
             </a>
-            <a href="mailto:info@fabri-cars.net" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Mail size={14} />
-              <span>info@fabri-cars.net</span>
-            </a>
           </div>
-          <div className="flex items-center gap-2 text-gold">
-            <Clock size={14} />
-            <span>Mon-Sat: 10:00 - 18:00</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main navigation */}
-      <div className="container mx-auto px-4 py-4">
-        <nav className="flex justify-between items-center">
-          <div className="font-display text-3xl md:text-4xl tracking-wide">
-            <span className="text-gold">FABRI</span>CAR<span className="text-gold">ZENTRUM</span>
-          </div>
-          <ul className="hidden md:flex items-center gap-8 font-display text-lg tracking-wider">
-            <li>
-              <button 
-                onClick={() => scrollToSection("home")}
-                className="hover:text-gold transition-colors"
-              >
-                HOME
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => scrollToSection("about")}
-                className="hover:text-gold transition-colors"
-              >
-                ABOUT US
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => scrollToSection("cars")}
-                className="hover:text-gold transition-colors"
-              >
-                OUR CARS
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => scrollToSection("location")}
-                className="hover:text-gold transition-colors"
-              >
-                LOCATION
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => scrollToSection("contact")}
-                className="hover:text-gold transition-colors"
-              >
-                CONTACT
-              </button>
-            </li>
-          </ul>
-        </nav>
+        )}
       </div>
     </header>
   );

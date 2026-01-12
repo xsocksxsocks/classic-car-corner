@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bebas Neue', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+        body: ['DM Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,13 +51,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        navy: "hsl(var(--navy))",
-        "navy-light": "hsl(var(--navy-light))",
-        cream: "hsl(var(--cream))",
-        "cream-dark": "hsl(var(--cream-dark))",
-        gold: "hsl(var(--gold))",
-        "gold-dark": "hsl(var(--gold-dark))",
-        rust: "hsl(var(--rust))",
+        charcoal: "hsl(var(--charcoal))",
+        "charcoal-light": "hsl(var(--charcoal-light))",
+        "warm-white": "hsl(var(--warm-white))",
+        "warm-gray": "hsl(var(--warm-gray))",
+        terracotta: "hsl(var(--terracotta))",
+        "terracotta-dark": "hsl(var(--terracotta-dark))",
+        sand: "hsl(var(--sand))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -83,15 +83,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
-          from: { opacity: "0", transform: "translateY(20px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out forwards",
       },
     },
   },

@@ -1,46 +1,79 @@
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-foreground py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-          {/* Logo */}
+    <footer className="bg-charcoal py-16">
+      <div className="container mx-auto px-6">
+        {/* Main footer content */}
+        <div className="grid md:grid-cols-3 gap-12 mb-12 pb-12 border-b border-white/10">
+          {/* Logo & tagline */}
           <div>
-            <div className="font-display text-2xl md:text-3xl tracking-wide text-background">
-              <span className="text-gold">FABRI</span>CAR<span className="text-gold">ZENTRUM</span>
+            <div className="font-display text-2xl text-white mb-4">
+              Fabri<span className="text-terracotta">Car</span>Zentrum
             </div>
-            <p className="text-background/60 mt-2">Quality cars, fair prices since 1995</p>
+            <p className="text-white/50 text-sm leading-relaxed">
+              Your trusted partner for quality pre-owned vehicles in Achern since 1995.
+            </p>
           </div>
 
           {/* Quick links */}
-          <div className="flex flex-wrap gap-6 md:justify-end font-display text-sm tracking-wider">
-            <a href="#home" className="text-background/60 hover:text-gold transition-colors">HOME</a>
-            <a href="#about" className="text-background/60 hover:text-gold transition-colors">ABOUT</a>
-            <a href="#cars" className="text-background/60 hover:text-gold transition-colors">CARS</a>
-            <a href="#location" className="text-background/60 hover:text-gold transition-colors">LOCATION</a>
-            <a href="#contact" className="text-background/60 hover:text-gold transition-colors">CONTACT</a>
+          <div>
+            <h4 className="text-white font-medium text-sm uppercase tracking-wide mb-4">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-white/50 text-sm">
+              {["Home", "About", "Services", "Location", "Contact"].map((link) => (
+                <li key={link}>
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    className="hover:text-terracotta transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact info */}
+          <div>
+            <h4 className="text-white font-medium text-sm uppercase tracking-wide mb-4">
+              Contact
+            </h4>
+            <ul className="space-y-2 text-white/50 text-sm">
+              <li>
+                <a href="tel:+4915784227058" className="hover:text-terracotta transition-colors">
+                  +49 157 84227058
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@fabri-cars.net" className="hover:text-terracotta transition-colors">
+                  info@fabri-cars.net
+                </a>
+              </li>
+              <li className="pt-2">
+                Mon – Sat: 10:00 – 18:00<br />
+                Sunday: Closed
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8">
-          {/* Imprint */}
-          <div className="text-background/50 text-sm space-y-1 mb-6">
-            <p className="font-semibold text-background/70">Imprint / Impressum</p>
-            <p>FabriCarZentrum UG</p>
-            <p>c/o Schulze & Braun GmbH</p>
-            <p>Vogelsang 4, 77855 Achern, Germany</p>
-            <p>Phone: +49 157 84227058</p>
-            <p>Email: info@fabri-cars.net</p>
-          </div>
+        {/* Imprint */}
+        <div className="text-white/40 text-xs space-y-2 mb-8">
+          <p className="text-white/60 font-medium">Impressum / Imprint</p>
+          <p>
+            FabriCarZentrum UG · c/o Schulze & Braun GmbH · Vogelsang 4, 77855 Achern, Germany
+          </p>
+          <p>
+            Phone: +49 157 84227058 · Email: info@fabri-cars.net
+          </p>
+        </div>
 
-          {/* Copyright */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-background/40 text-sm">
-              © {new Date().getFullYear()} FabriCarZentrum UG. All rights reserved.
-            </p>
-            <p className="text-background/40 text-sm">
-              Made with passion for automobiles
-            </p>
-          </div>
+        {/* Copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
+          <p>© {currentYear} FabriCarZentrum UG. All rights reserved.</p>
+          <p>Quality cars, honest deals.</p>
         </div>
       </div>
     </footer>
