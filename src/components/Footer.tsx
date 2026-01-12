@@ -1,5 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="bg-charcoal py-16">
@@ -8,34 +17,34 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12 pb-12 border-b border-white/10">
           {/* Logo & tagline */}
           <div>
-            <div className="font-display text-2xl text-white mb-4">
+            <Link to="/" className="font-display text-2xl text-white mb-4 block">
               Fabri<span className="text-terracotta">Car</span>Zentrum
-            </div>
+            </Link>
             <p className="text-white/50 text-sm leading-relaxed">
-              Ihr vertrauenswürdiger Partner für hochwertige Gebrauchtwagen in Achern seit 2013.
+              Ihr Autohaus in Achern – persönlich, fair und mit Leidenschaft für gute Autos. Seit 2013.
             </p>
           </div>
 
           {/* Quick links */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wide mb-4">
-              Schnellzugriff
+              Navigation
             </h4>
             <ul className="space-y-2 text-white/50 text-sm">
               {[
                 { id: "home", label: "Start" },
-                { id: "about", label: "Über Uns" },
+                { id: "about", label: "Über uns" },
                 { id: "services", label: "Leistungen" },
-                { id: "location", label: "Standort" },
+                { id: "location", label: "Anfahrt" },
                 { id: "contact", label: "Kontakt" },
               ].map((link) => (
                 <li key={link.id}>
-                  <a
-                    href={`#${link.id}`}
-                    className="hover:text-terracotta transition-colors"
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="hover:text-terracotta transition-colors text-left"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -65,21 +74,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Imprint */}
-        <div className="text-white/40 text-xs space-y-2 mb-8">
-          <p className="text-white/60 font-medium">Impressum</p>
-          <p>
-            FabriCarZentrum UG · c/o Schulze & Braun GmbH · Vogelsang 4, 77855 Achern, Deutschland
-          </p>
-          <p>
-            Telefon: +49 157 84227058 · E-Mail: info@fabri-cars.net
-          </p>
+        {/* Legal links */}
+        <div className="flex flex-wrap gap-6 mb-8 text-white/40 text-sm">
+          <Link to="/impressum" className="hover:text-terracotta transition-colors">
+            Impressum
+          </Link>
+          <Link to="/datenschutz" className="hover:text-terracotta transition-colors">
+            Datenschutz
+          </Link>
         </div>
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
           <p>© {currentYear} FabriCarZentrum UG. Alle Rechte vorbehalten.</p>
-          <p>Qualitätsautos, ehrliche Angebote.</p>
+          <p>Mit Leidenschaft für Automobile.</p>
         </div>
       </div>
     </footer>

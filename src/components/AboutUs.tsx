@@ -1,46 +1,66 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
 const AboutUs = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section id="about" className="py-24 md:py-32 bg-warm-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left column - headline */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
             <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
-              Über Uns
+              Über uns
             </p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
               Mehr als nur ein{" "}
-              <span className="italic">Autohändler</span>
+              <span className="italic">Autohaus</span>
             </h2>
             <div className="w-20 h-1 bg-terracotta" />
-          </div>
+          </motion.div>
 
           {/* Right column - text */}
-          <div className="space-y-6 text-foreground/70 text-lg leading-relaxed">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6 text-foreground/70 text-lg leading-relaxed"
+          >
             <p>
-              Seit 2013 ist FabriCarZentrum ein fester Bestandteil der Acherner 
-              Automobillandschaft. Was als kleines Familienunternehmen begann, hat sich 
-              zu einer vertrauenswürdigen Adresse für hochwertige Gebrauchtwagen entwickelt.
+              Seit 2013 sind wir in Achern für Sie da. Was als kleiner Familienbetrieb 
+              begann, ist heute eine feste Größe, wenn es um gute Gebrauchtwagen geht.
             </p>
             <p>
-              Wir glauben, dass der Autokauf unkompliziert sein sollte. Deshalb setzen wir 
-              auf Transparenz, faire Preise und den Aufbau langfristiger Kundenbeziehungen. 
-              Jedes Fahrzeug, das wir verkaufen, wird gründlich geprüft und kommt mit 
-              vollständiger Dokumentation.
+              Bei uns steht der Mensch im Mittelpunkt – nicht der schnelle Verkauf. 
+              Wir nehmen uns Zeit für Sie, beraten ehrlich und finden gemeinsam das 
+              Auto, das wirklich zu Ihnen passt. Jedes Fahrzeug wird sorgfältig 
+              geprüft und kommt mit allen Unterlagen zu Ihnen.
             </p>
             <p className="text-foreground font-medium">
-              Besuchen Sie uns—wir helfen Ihnen gerne, Ihr nächstes Auto zu finden.
+              Schauen Sie vorbei – wir freuen uns auf Sie!
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-border">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-border"
+        >
           {[
-            { number: "10+", label: "Jahre Erfahrung" },
-            { number: "500+", label: "Verkaufte Autos" },
-            { number: "100%", label: "Transparenz" },
-            { number: "1", label: "Zufriedene Community" },
+            { number: "10+", label: "Jahre dabei" },
+            { number: "500+", label: "Zufriedene Kunden" },
+            { number: "100%", label: "Ehrlichkeit" },
+            { number: "1", label: "Leidenschaft" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="font-display text-4xl md:text-5xl text-terracotta mb-2">
@@ -51,7 +71,7 @@ const AboutUs = () => {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
