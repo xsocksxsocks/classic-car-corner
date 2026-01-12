@@ -6,11 +6,11 @@ const AboutUs = () => {
           {/* Left column - headline */}
           <div>
             <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
-              About Us
+              Über Uns
             </p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              More Than Just a{" "}
-              <span className="italic">Car Dealer</span>
+              Mehr als nur ein{" "}
+              <span className="italic">Autohändler</span>
             </h2>
             <div className="w-20 h-1 bg-terracotta" />
           </div>
@@ -18,18 +18,18 @@ const AboutUs = () => {
           {/* Right column - text */}
           <div className="space-y-6 text-foreground/70 text-lg leading-relaxed">
             <p>
-              For over 30 years, FabriCarZentrum has been a cornerstone of the Achern 
-              automotive community. What started as a small family business has grown 
-              into a trusted destination for quality pre-owned vehicles.
+              Seit 2013 ist FabriCarZentrum ein fester Bestandteil der Acherner 
+              Automobillandschaft. Was als kleines Familienunternehmen begann, hat sich 
+              zu einer vertrauenswürdigen Adresse für hochwertige Gebrauchtwagen entwickelt.
             </p>
             <p>
-              We believe buying a car should be straightforward. That's why we focus 
-              on transparency, fair pricing, and building lasting relationships with 
-              our customers. Every vehicle we sell is thoroughly inspected and comes 
-              with complete documentation.
+              Wir glauben, dass der Autokauf unkompliziert sein sollte. Deshalb setzen wir 
+              auf Transparenz, faire Preise und den Aufbau langfristiger Kundenbeziehungen. 
+              Jedes Fahrzeug, das wir verkaufen, wird gründlich geprüft und kommt mit 
+              vollständiger Dokumentation.
             </p>
             <p className="text-foreground font-medium">
-              Come visit us—we'd love to help you find your next car.
+              Besuchen Sie uns—wir helfen Ihnen gerne, Ihr nächstes Auto zu finden.
             </p>
           </div>
         </div>
@@ -37,10 +37,10 @@ const AboutUs = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-border">
           {[
-            { number: "30+", label: "Years Experience" },
-            { number: "2000+", label: "Cars Sold" },
-            { number: "100%", label: "Transparency" },
-            { number: "1", label: "Happy Community" },
+            { number: "10+", label: "Jahre Erfahrung" },
+            { number: "500+", label: "Verkaufte Autos" },
+            { number: "100%", label: "Transparenz" },
+            { number: "1", label: "Zufriedene Community" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="font-display text-4xl md:text-5xl text-terracotta mb-2">

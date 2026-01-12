@@ -12,23 +12,29 @@ const Footer = () => {
               Fabri<span className="text-terracotta">Car</span>Zentrum
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              Your trusted partner for quality pre-owned vehicles in Achern since 1995.
+              Ihr vertrauenswürdiger Partner für hochwertige Gebrauchtwagen in Achern seit 2013.
             </p>
           </div>
 
           {/* Quick links */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wide mb-4">
-              Quick Links
+              Schnellzugriff
             </h4>
             <ul className="space-y-2 text-white/50 text-sm">
-              {["Home", "About", "Services", "Location", "Contact"].map((link) => (
-                <li key={link}>
+              {[
+                { id: "home", label: "Start" },
+                { id: "about", label: "Über Uns" },
+                { id: "services", label: "Leistungen" },
+                { id: "location", label: "Standort" },
+                { id: "contact", label: "Kontakt" },
+              ].map((link) => (
+                <li key={link.id}>
                   <a
-                    href={`#${link.toLowerCase()}`}
+                    href={`#${link.id}`}
                     className="hover:text-terracotta transition-colors"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -38,7 +44,7 @@ const Footer = () => {
           {/* Contact info */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wide mb-4">
-              Contact
+              Kontakt
             </h4>
             <ul className="space-y-2 text-white/50 text-sm">
               <li>
@@ -52,8 +58,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="pt-2">
-                Mon – Sat: 10:00 – 18:00<br />
-                Sunday: Closed
+                Mo – Sa: 10:00 – 18:00<br />
+                Sonntag: Geschlossen
               </li>
             </ul>
           </div>
@@ -61,19 +67,19 @@ const Footer = () => {
 
         {/* Imprint */}
         <div className="text-white/40 text-xs space-y-2 mb-8">
-          <p className="text-white/60 font-medium">Impressum / Imprint</p>
+          <p className="text-white/60 font-medium">Impressum</p>
           <p>
-            FabriCarZentrum UG · c/o Schulze & Braun GmbH · Vogelsang 4, 77855 Achern, Germany
+            FabriCarZentrum UG · c/o Schulze & Braun GmbH · Vogelsang 4, 77855 Achern, Deutschland
           </p>
           <p>
-            Phone: +49 157 84227058 · Email: info@fabri-cars.net
+            Telefon: +49 157 84227058 · E-Mail: info@fabri-cars.net
           </p>
         </div>
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
-          <p>© {currentYear} FabriCarZentrum UG. All rights reserved.</p>
-          <p>Quality cars, honest deals.</p>
+          <p>© {currentYear} FabriCarZentrum UG. Alle Rechte vorbehalten.</p>
+          <p>Qualitätsautos, ehrliche Angebote.</p>
         </div>
       </div>
     </footer>
