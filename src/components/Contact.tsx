@@ -7,14 +7,14 @@ const Contact = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Header */}
           <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
-            Get In Touch
+            Kontakt
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-            Ready to Find Your <span className="italic">Next Car?</span>
+            Bereit für Ihr <span className="italic">nächstes Auto?</span>
           </h2>
           <p className="text-foreground/60 text-lg mb-12">
-            Whether you have questions or just want to browse, we're always happy to help. 
-            Give us a call or send an email.
+            Ob Sie Fragen haben oder einfach nur stöbern möchten—wir helfen Ihnen gerne. 
+            Rufen Sie uns an oder schreiben Sie eine E-Mail.
           </p>
 
           {/* Contact options */}
@@ -25,7 +25,7 @@ const Contact = () => {
             >
               <Phone className="w-8 h-8 text-terracotta mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <p className="text-sm uppercase tracking-wide text-foreground/50 group-hover:text-white/50 mb-2 transition-colors">
-                Call Us
+                Rufen Sie Uns An
               </p>
               <p className="font-display text-xl group-hover:text-white transition-colors">
                 +49 157 84227058
@@ -38,7 +38,7 @@ const Contact = () => {
             >
               <Mail className="w-8 h-8 text-terracotta mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <p className="text-sm uppercase tracking-wide text-foreground/50 group-hover:text-white/50 mb-2 transition-colors">
-                Email Us
+                Schreiben Sie Uns
               </p>
               <p className="font-display text-xl group-hover:text-white transition-colors">
                 info@fabri-cars.net
@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
 
           <p className="text-foreground/40 text-sm">
-            We typically respond within 24 hours
+            Wir antworten in der Regel innerhalb von 24 Stunden
           </p>
         </div>
       </div>

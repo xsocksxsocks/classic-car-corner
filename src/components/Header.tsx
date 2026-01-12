@@ -21,13 +21,19 @@ const Header = () => {
 
           {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-8 font-body text-sm tracking-wide">
-            {["home", "about", "services", "location", "contact"].map((item) => (
-              <li key={item}>
+            {[
+              { id: "home", label: "Start" },
+              { id: "about", label: "Über Uns" },
+              { id: "services", label: "Leistungen" },
+              { id: "location", label: "Standort" },
+              { id: "contact", label: "Kontakt" },
+            ].map((item) => (
+              <li key={item.id}>
                 <button
-                  onClick={() => scrollToSection(item)}
+                  onClick={() => scrollToSection(item.id)}
                   className="hover-line text-foreground/70 hover:text-foreground transition-colors uppercase"
                 >
-                  {item}
+                  {item.label}
                 </button>
               </li>
             ))}
@@ -55,13 +61,19 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-6 px-6">
             <ul className="flex flex-col gap-4 font-body text-sm">
-              {["home", "about", "services", "location", "contact"].map((item) => (
-                <li key={item}>
+              {[
+                { id: "home", label: "Start" },
+                { id: "about", label: "Über Uns" },
+                { id: "services", label: "Leistungen" },
+                { id: "location", label: "Standort" },
+                { id: "contact", label: "Kontakt" },
+              ].map((item) => (
+                <li key={item.id}>
                   <button
-                    onClick={() => scrollToSection(item)}
+                    onClick={() => scrollToSection(item.id)}
                     className="text-foreground/70 hover:text-foreground transition-colors uppercase w-full text-left py-2"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 </li>
               ))}

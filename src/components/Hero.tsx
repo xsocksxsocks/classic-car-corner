@@ -17,23 +17,23 @@ const Hero = () => {
 
       {/* Large decorative text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[20vw] text-white/[0.03] whitespace-nowrap pointer-events-none select-none">
-        AUTOMOBILES
+        AUTOMOBILE
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <p className="text-terracotta text-sm md:text-base tracking-[0.4em] uppercase mb-8">
-          Est. 1995 · Achern, Germany
+          Seit 2013 · Achern, Deutschland
         </p>
 
         <h1 className="font-display text-primary-foreground text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 max-w-4xl mx-auto">
-          Where Quality Meets{" "}
-          <span className="italic text-terracotta">Trust</span>
+          Wo Qualität auf{" "}
+          <span className="italic text-terracotta">Vertrauen</span> trifft
         </h1>
 
         <p className="text-primary-foreground/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-          A family-owned car dealership dedicated to finding you the perfect vehicle. 
-          No pressure, no gimmicks—just honest deals.
+          Ein familiengeführtes Autohaus, das Ihnen hilft, das perfekte Fahrzeug zu finden. 
+          Kein Druck, keine Tricks—nur ehrliche Angebote.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -41,13 +41,13 @@ const Hero = () => {
             href="tel:+4915784227058"
             className="bg-terracotta hover:bg-terracotta-dark text-white font-medium px-8 py-4 transition-colors text-sm tracking-wide uppercase"
           >
-            Call Us Today
+            Jetzt Anrufen
           </a>
           <button
             onClick={scrollToAbout}
             className="border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-charcoal font-medium px-8 py-4 transition-all text-sm tracking-wide uppercase"
           >
-            Learn More
+            Mehr Erfahren
           </button>
         </div>
       </div>

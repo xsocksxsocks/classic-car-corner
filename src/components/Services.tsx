@@ -3,23 +3,23 @@ import { Car, FileCheck, Handshake, Wrench } from "lucide-react";
 const services = [
   {
     icon: Car,
-    title: "Quality Vehicles",
-    description: "Carefully selected pre-owned cars, each one inspected and road-tested before sale.",
+    title: "Qualitätsfahrzeuge",
+    description: "Sorgfältig ausgewählte Gebrauchtwagen, jedes Fahrzeug wird vor dem Verkauf geprüft und probegefahren.",
   },
   {
     icon: FileCheck,
-    title: "Full Documentation",
-    description: "Complete service history and paperwork for every vehicle we sell. No surprises.",
+    title: "Vollständige Dokumentation",
+    description: "Komplette Servicehistorie und Unterlagen für jedes Fahrzeug. Keine Überraschungen.",
   },
   {
     icon: Handshake,
-    title: "Fair Deals",
-    description: "Honest pricing with no hidden fees. What you see is what you pay.",
+    title: "Faire Angebote",
+    description: "Ehrliche Preise ohne versteckte Gebühren. Was Sie sehen, ist was Sie zahlen.",
   },
   {
     icon: Wrench,
-    title: "After-Sale Support",
-    description: "We're here even after you drive away. Questions? Just give us a call.",
+    title: "After-Sales Service",
+    description: "Wir sind auch nach dem Kauf für Sie da. Fragen? Rufen Sie uns einfach an.",
   },
 ];
 
@@ -30,10 +30,10 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-terracotta text-sm tracking-[0.3em] uppercase mb-4">
-            What We Offer
+            Unsere Leistungen
           </p>
           <h2 className="font-display text-primary-foreground text-4xl md:text-5xl lg:text-6xl">
-            Simple, Honest Service
+            Einfacher, ehrlicher Service
           </h2>
         </div>
 
@@ -58,13 +58,13 @@ const Services = () => {
         {/* Simple CTA */}
         <div className="text-center mt-16 pt-16 border-t border-primary-foreground/10">
           <p className="text-primary-foreground/40 text-lg mb-6">
-            Interested in seeing our current inventory?
+            Interesse an unserem aktuellen Angebot?
           </p>
           <a
             href="tel:+4915784227058"
             className="inline-block bg-terracotta hover:bg-terracotta-dark text-white font-medium px-8 py-4 transition-colors text-sm tracking-wide uppercase"
           >
-            Give Us a Call
+            Rufen Sie Uns An
           </a>
         </div>
       </div>
