@@ -1,6 +1,7 @@
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,8 +31,8 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="font-display text-2xl md:text-3xl tracking-tight">
-            Fabri<span className="text-terracotta">Car</span>Zentrum
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="FabriCarZentrum Logo" className="h-8 md:h-10 brightness-0" />
           </Link>
 
           {/* Desktop nav */}
