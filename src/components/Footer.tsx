@@ -57,9 +57,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2 text-white/50 text-sm">
               <li>
-                <a href="tel:+4915784227058" className="hover:text-terracotta transition-colors">
-                  +49 157 84227058
-                </a>
+                <span>Telefon: Nur auf Anfrage</span>
               </li>
               <li>
                 <a href="mailto:info@fabri-cars.net" className="hover:text-terracotta transition-colors">

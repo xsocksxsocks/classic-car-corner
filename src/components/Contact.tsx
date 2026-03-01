@@ -35,18 +35,17 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="grid sm:grid-cols-2 gap-8 mb-12"
           >
-            <a
-              href="tel:+4915784227058"
-              className="group p-8 bg-white hover:bg-charcoal transition-colors"
+            <div
+              className="group p-8 bg-white"
             >
-              <Phone className="w-8 h-8 text-terracotta mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <p className="text-sm uppercase tracking-wide text-foreground/50 group-hover:text-white/50 mb-2 transition-colors">
-                Anrufen
+              <Phone className="w-8 h-8 text-terracotta mx-auto mb-4" />
+              <p className="text-sm uppercase tracking-wide text-foreground/50 mb-2">
+                Telefon
               </p>
-              <p className="font-display text-xl group-hover:text-white transition-colors">
-                +49 157 84227058
+              <p className="font-display text-xl">
+                Nur auf Anfrage
               </p>
-            </a>
+            </div>
 
             <a
               href="mailto:info@fabri-cars.net"
