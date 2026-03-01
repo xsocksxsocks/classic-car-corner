@@ -40,8 +40,8 @@ const Datenschutz = () => {
                 Deutschland
               </p>
               <p className="mt-4">
-                Telefon: +49 157 84227058<br />
-                E-Mail: info@fabri-cars.net
+                Telefon: Nur auf Anfrage<br />
+                E-Mail: kontakt@fabri-cars.net
               </p>
             </section>
 

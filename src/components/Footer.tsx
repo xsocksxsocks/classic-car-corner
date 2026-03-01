@@ -61,8 +61,8 @@ const Footer = () => {
                 <span>Telefon: Nur auf Anfrage</span>
               </li>
               <li>
-                <a href="mailto:info@fabri-cars.net" className="hover:text-terracotta transition-colors">
-                  info@fabri-cars.net
+                <a href="mailto:kontakt@fabri-cars.net" className="hover:text-terracotta transition-colors">
+                  kontakt@fabri-cars.net
                 </a>
               </li>
               <li className="pt-2">
