@@ -35,7 +35,7 @@ const Impressum = () => {
               <h2 className="font-display text-2xl text-foreground mb-4">Kontakt</h2>
               <p>
                 Telefon: Nur auf Anfrage<br />
-                E-Mail: info@fabri-cars.net
+                E-Mail: kontakt@fabri-cars.net
               </p>
             </section>
 

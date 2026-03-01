@@ -79,7 +79,7 @@ const Services = () => {
             Neugierig geworden? Wir zeigen Ihnen gern, was wir gerade da haben.
           </p>
           <a
-            href="mailto:info@fabri-cars.net"
+            href="mailto:kontakt@fabri-cars.net"
             className="inline-block bg-terracotta hover:bg-terracotta-dark text-white font-medium px-8 py-4 transition-colors text-sm tracking-wide uppercase"
           >
             Jetzt anfragen

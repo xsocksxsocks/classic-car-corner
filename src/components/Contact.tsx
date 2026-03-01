@@ -48,7 +48,7 @@ const Contact = () => {
             </div>
 
             <a
-              href="mailto:info@fabri-cars.net"
+              href="mailto:kontakt@fabri-cars.net"
               className="group p-8 bg-white hover:bg-charcoal transition-colors"
             >
               <Mail className="w-8 h-8 text-terracotta mx-auto mb-4 group-hover:scale-110 transition-transform" />
@@ -56,7 +56,7 @@ const Contact = () => {
                 E-Mail schreiben
               </p>
               <p className="font-display text-xl group-hover:text-white transition-colors">
-                info@fabri-cars.net
+                kontakt@fabri-cars.net
               </p>
             </a>
           </motion.div>
