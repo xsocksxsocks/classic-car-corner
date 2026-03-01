@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,8 +18,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12 pb-12 border-b border-white/10">
           {/* Logo & tagline */}
           <div>
-            <Link to="/" className="font-display text-2xl text-white mb-4 block">
-              Fabri<span className="text-terracotta">Car</span>Zentrum
+            <Link to="/" className="mb-4 block">
+              <img src={logo} alt="FabriCarZentrum Logo" className="h-10" />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed">
               Ihr Autohaus in Achern – persönlich, fair und mit Leidenschaft für gute Autos. Seit 2013.
