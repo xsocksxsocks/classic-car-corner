@@ -59,10 +59,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="tel:+4915784227058"
+            href="mailto:info@fabri-cars.net"
             className="bg-terracotta hover:bg-terracotta-dark text-white font-medium px-8 py-4 transition-colors text-sm tracking-wide uppercase"
           >
-            Jetzt anrufen
+            Jetzt anfragen
           </a>
           <button
             onClick={scrollToAbout}

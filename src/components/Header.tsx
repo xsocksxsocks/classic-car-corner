@@ -49,13 +49,12 @@ const Header = () => {
           </ul>
 
           {/* Phone CTA */}
-          <a
-            href="tel:+4915784227058"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-terracotta hover:text-terracotta-dark transition-colors"
+          <span
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-terracotta"
           >
             <Phone size={16} />
-            <span>+49 157 84227058</span>
-          </a>
+            <span>Nur auf Anfrage</span>
+          </span>
 
           {/* Mobile menu button */}
           <button
@@ -81,13 +80,12 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <a
-              href="tel:+4915784227058"
+            <span
               className="flex items-center gap-2 mt-6 pt-4 border-t border-border text-sm font-medium text-terracotta"
             >
               <Phone size={16} />
-              <span>+49 157 84227058</span>
-            </a>
+              <span>Nur auf Anfrage</span>
+            </span>
           </div>
         )}
       </div>
